@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +9,15 @@
 <body>
     <header>
         <h1>Photo Gallery</h1>
-        <button id="showBioButton">Show Bio</button>
+        <button id="showBioButton">経歴を表示</button>
     </header>
     <main class="gallery">
-        <img src="images/photo1.jpg" alt="Photo 1">
-        <img src="images/photo2.jpg" alt="Photo 2">
-        <img src="images/photo3.jpg" alt="Photo 3">
-        <img src="images/photo4.jpg" alt="Photo 4">
-        <img src="images/photo5.jpg" alt="Photo 5">
-        <img src="images/photo6.jpg" alt="Photo 6">
+        <img src="images/photo1.jpg" alt="">
+        <img src="images/photo2.jpg" alt="">
+        <img src="images/photo3.jpg" alt="">
+        <img src="images/photo4.jpg" alt="">
+        <img src="images/photo5.jpg" alt="">
+        <img src="images/photo6.jpg" alt="">
     </main>
     <footer>
         <p>&copy; 2024 Your Name. All rights reserved.</p>
@@ -25,8 +25,8 @@
     <div id="bioModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Bio</h2>
-            <p>Your bio goes here. This can include details about your career, achievements, and personal background.</p>
+            <h2>経歴</h2>
+            <p id="bioContent">経歴の内容を読み込み中...</p>
         </div>
     </div>
     <script src="script.js"></script>
