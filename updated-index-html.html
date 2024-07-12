@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フォトギャラリー</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Photo Gallery</h1>
+        <div class="dropdown">
+            <button class="dropbtn">メニュー</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="loadContent('profile')">経歴</a>
+                <a href="#" onclick="loadContent('works')">作品紹介</a>
+                <a href="#" onclick="loadContent('diary')">日記</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="gallery">
+        <img src="images/photo1.jpg" alt="Photo 1" onclick="openModal(this.src)">
+        <img src="images/photo2.jpg" alt="Photo 2" onclick="openModal(this.src)">
+        <img src="images/photo3.jpg" alt="Photo 3" onclick="openModal(this.src)">
+        <img src="images/photo4.jpg" alt="Photo 4" onclick="openModal(this.src)">
+        <img src="images/photo5.jpg" alt="Photo 5" onclick="openModal(this.src)">
+        <img src="images/photo6.jpg" alt="Photo 6" onclick="openModal(this.src)">
+    </main>
+
+    <footer>
+        © 2024 Your Name. All rights reserved.
+    </footer>
+
+    <div id="contentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="image-modal">
+        <span class="close-image">&times;</span>
+        <img id="expandedImage">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
