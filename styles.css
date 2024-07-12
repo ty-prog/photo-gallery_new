@@ -64,6 +64,7 @@ header button:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
 }
 
 .gallery img:hover {
@@ -82,7 +83,7 @@ footer {
     bottom: 0;
 }
 
-.modal {
+.modal, .image-modal {
     display: none; 
     position: fixed;
     z-index: 1;
@@ -94,7 +95,7 @@ footer {
     background-color: rgba(0,0,0,0.5);
 }
 
-.modal-content {
+.modal-content, .image-modal img {
     background-color: #ffffff;
     margin: 10% auto;
     padding: 20px;
@@ -104,6 +105,28 @@ footer {
     border-radius: 10px;
     text-align: left;
     line-height: 1.6;
+}
+
+.image-modal img {
+    max-width: 80%;
+    max-height: 80%;
+    transition: transform 0.3s ease;
+}
+
+.image-modal .close-image {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.image-modal .close-image:hover,
+.image-modal .close-image:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .close {
