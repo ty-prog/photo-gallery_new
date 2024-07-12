@@ -3,49 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Gallery</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-        .gallery img {
-            width: 200px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        .gallery img:hover {
-            transform: scale(1.05);
-        }
-    </style>
+    <title>Stylish Photo Gallery</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Photo Gallery</h1>
-    <div class="gallery">
-        <img src="photo1.jpg" alt="Photo 1">
-        <img src="photo2.jpg" alt="Photo 2">
-        <img src="photo3.jpg" alt="Photo 3">
-        <img src="photo4.jpg" alt="Photo 4">
-        <img src="photo5.jpg" alt="Photo 5">
-        <img src="photo6.jpg" alt="Photo 6">
-    </div>
+    <header>
+        <h1>Photo Gallery</h1>
+    </header>
+    <main class="gallery">
+        <img src="images/photo1.jpg" alt="Photo 1">
+        <img src="images/photo2.jpg" alt="Photo 2">
+        <img src="images/photo3.jpg" alt="Photo 3">
+        <img src="images/photo4.jpg" alt="Photo 4">
+        <img src="images/photo5.jpg" alt="Photo 5">
+        <img src="images/photo6.jpg" alt="Photo 6">
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
 </body>
 </html>
