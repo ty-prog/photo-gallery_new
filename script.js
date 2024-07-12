@@ -20,3 +20,26 @@ window.onclick = function(event) {
         document.getElementById('bioModal').style.display = 'none';
     }
 }
+
+// Image modal functionality
+const images = document.querySelectorAll('.gallery img');
+const imageModal = document.getElementById('imageModal');
+const expandedImage = document.getElementById('expandedImage');
+const closeImage = document.getElementsByClassName('close-image')[0];
+
+images.forEach(img => {
+    img.onclick = function() {
+        expandedImage.src = this.src;
+        imageModal.style.display = 'block';
+    }
+});
+
+closeImage.onclick = function() {
+    imageModal.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == imageModal) {
+        imageModal.style.display = 'none';
+    }
+}
