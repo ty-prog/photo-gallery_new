@@ -2,7 +2,7 @@ document.getElementById('showBioButton').onclick = function() {
     fetch('bio.txt')
         .then(response => response.text())
         .then(data => {
-            document.getElementById('bioContent').textContent = data;
+            document.getElementById('bioContent').innerHTML = data.replace(/\n/g, '<br>');
             document.getElementById('bioModal').style.display = 'block';
         })
         .catch(error => {
