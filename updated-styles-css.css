@@ -1,187 +1,71 @@
-/* Reset some default browser styles */
-body, h1, p {
+/* 既存のスタイルは維持し、以下を追加または修正 */
+
+body {
     margin: 0;
     padding: 0;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-body {
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
-    animation: backgroundAnimation 15s ease infinite;
+    animation: gradientBG 15s ease infinite;
     min-height: 100vh;
-}
-
-@keyframes backgroundAnimation {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
-}
-
-header {
-    width: 100%;
-    padding: 20px 0;
-    background-color: rgba(255, 255, 255, 0.9);
-    border-bottom: 2px solid #e0e0e0;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1;
-}
-
-header h1 {
-    font-size: 2.5em;
-    color: #333;
-}
-
-.dropdown {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.dropbtn {
-    padding: 10px 20px;
-    font-size: 14px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    background-color: #007BFF;
-    color: white;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.dropbtn:hover {
-    background-color: #0056b3;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    max-width: 900px;
-    margin: 40px auto;
-    z-index: 1;
 }
 
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ヘッダーの背景を半透明に */
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* 他のヘッダースタイルは維持 */
+}
+
+/* フッターの背景も半透明に */
+footer {
+    background-color: rgba(255, 255, 255, 0.8);
+    /* 他のフッタースタイルは維持 */
+}
+
+/* ギャラリーの画像に影をつけて浮き上がらせる */
 .gallery img {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-footer {
-    width: 100%;
-    padding: 20px 0;
+/* ドロップダウンメニューのスタイル調整 */
+.dropdown-content {
     background-color: rgba(255, 255, 255, 0.9);
-    border-top: 2px solid #e0e0e0;
-    text-align: center;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-    bottom: 0;
-    z-index: 1;
+    /* 他のドロップダウンスタイルは維持 */
 }
 
-.modal, .image-modal {
-    display: none; 
-    position: fixed;
-    z-index: 2;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.8);
-}
-
-.modal-content {
-    background-color: #ffffff;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    text-align: left;
-    line-height: 1.6;
-}
-
-.image-modal img {
-    width: 80%;
-    height: auto;
-    max-height: 80%;
-    transition: transform 0.3s ease;
+.dropdown-content.show {
     display: block;
-    margin: auto;
 }
 
-.image-modal .close-image {
-    color: #aaa;
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    font-size: 40px;
-    font-weight: bold;
+/* モーダルの背景をより暗く */
+.modal, .image-modal {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* 他のモーダルスタイルは維持 */
 }
 
-.image-modal .close-image:hover,
-.image-modal .close-image:focus {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+/* モーダルコンテンツの背景を半透明に */
+.modal-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    /* 他のモーダルコンテンツスタイルは維持 */
 }
